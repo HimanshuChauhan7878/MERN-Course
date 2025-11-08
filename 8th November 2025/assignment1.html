@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Attendance Table</title>
+<style>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff6f6; /* soft light background */
+  margin: 40px;
+  text-align: center;
+}
+
+h2 {
+  color: #b30000;
+  text-shadow: 1px 1px 1px #ffcccc;
+  margin-bottom: 5px;
+}
+
+h3 {
+  color: #b84d4d;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 80%;
+  background-color: #fffaf7;
+  border: 2px solid #d46a6a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+th {
+  background-color: #ffe5e5;
+  color: #b30000;
+  font-weight: bold;
+  padding: 12px;
+  border-bottom: 3px solid #b30000;
+  text-align: left;
+}
+
+td {
+  padding: 12px;
+  border: 1px solid #d46a6a;
+  text-align: left;
+  color: #333;
+}
+
+tr:nth-child(even) {
+  background-color: #fff5f0;
+}
+
+tr:hover {
+  background-color: #ffefef;
+  transition: 0.3s;
+}
+</style>
+</head>
+<body>
+
+<h2>Employee Attendance Table</h2>
+<h3>Attendance Records</h3>
+
+<table>
+  <tr>
+    <th>Employee ID</th>
+    <th>Name</th>
+    <th>Department</th>
+    <th>Attendance Status</th>
+  </tr>
+  <tr>
+    <td>12345</td>
+    <td>example1</td>
+    <td>IT</td>
+    <td>Present</td>
+  </tr>
+  <tr>
+    <td>67890</td>
+    <td>example2</td>
+    <td>HR</td>
+    <td>Absent</td>
+  </tr>
+  <tr>
+    <td>54321</td>
+    <td>example3</td>
+    <td>Finance</td>
+    <td>Present</td>
+  </tr>
+</table>
+
+</body>
+</html>

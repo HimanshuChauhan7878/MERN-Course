@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* --- 1. General div style --- */
+div {
+  border: 1px solid black;
+  margin: 25px 50px 75px 100px;
+  background-color: lightblue;
+}
+
+/* --- 2. Specific div with custom margins --- */
+.class1 {
+  border: 5px dotted black;
+  margin-top: 100px;
+  margin-bottom: 5px;
+  margin-right: 450px;
+  margin-left: 800px;
+  background-color: lightgreen;
+}
+
+/* --- 3. Inheritance example --- */
+div.inherit-demo {
+  border: 1px solid red;
+  margin-left: 100px;
+}
+
+p.ex1 {
+  margin-left: inherit;
+}
+
+/* --- 4. Box-sizing example --- */
+div.ex1 {
+  width: 300px;
+  background-color: yellow;
+}
+
+div.ex2 {
+  width: 300px;
+  padding: 50px;
+  box-sizing: border-box;
+  background-color: lightblue;
+}
+</style>
+</head>
+<body>
+
+  <!-- Margin examples -->
+  <center>
+    <h2>Using individual and shorthand margin properties</h2>
+  </center>
+
+  <div class="class1">
+    This div element has a top margin of 100px, a right margin of 450px,
+    a bottom margin of 5px, and a left margin of 800px.
+  </div>
+
+  <div>
+    This div element uses shorthand margin notation:
+    25px top, 50px right, 75px bottom, and 100px left.
+  </div>
+
+  <hr>
+
+  <!-- Inherit example -->
+  <h2>Use of the inherit value</h2>
+  <p>Let the left margin be inherited from the parent element:</p>
+
+  <div class="inherit-demo">
+    <p class="ex1">
+      This paragraph has an inherited left margin (from the div element).
+    </p>
+  </div>
+
+  <hr>
+
+  <!-- Box-sizing example -->
+  <h2>Padding and element width - with box-sizing</h2>
+  <div class="ex1">This div is 300px wide.</div>
+  <br>
+  <div class="ex2">This div is also 300px wide (includes padding due to box-sizing).</div>
+<style>
+div {
+  height: 200px;
+  width: 50%;
+  background-color: powderblue;
+}
+</style>
+</head>
+<body>
+
+<h2>Set the height and width of an element</h2>
+
+<div>
+  This div element has a height of 200px and a width of 50%.
+</div>
+</style>
+</head>
+<body>
+
+<h2>Set the height and width of an element</h2>
+
+<div>This div element has a height of 200px and a width of 50%.</div>
+
+<style>
+div {
+  width: 300px;
+  background-color: lightblue;
+  border: 5px solid blue;
+  padding: 30px;
+  margin: 40px;
+}
+</style>
+</head>
+<body>
+
+<h2>Simple Box Model Example</h2>
+
+<div>
+  This is a simple box model example.<br><br>
+  The box has:
+  <ul>
+    <li>300px width (content area)</li>
+    <li>30px padding (space inside border)</li>
+    <li>5px solid blue border</li>
+    <li>40px margin (space outside the box)</li>
+  </ul>
+</div>
+
+<style>
+p {
+outline-color:green;
+padding: 5px;
+}
+
+p.dotted {outline-style: dotted;}
+p.dashed {outline-style: dashed;}
+p.solid {outline-style: solid;}
+p.double {outline-style: double;}
+p.groove {outline-style: groove;}
+p.ridge {outline-style: ridge;}
+p.inset {outline-style: inset;}
+p.outset {outline-style: outset;}
+</style>
+</head>
+<body>
+
+<h2>The outline-style Property</h2>
+
+<p class="dotted">A dotted outline</p>
+<p class="dashed">A dashed outline</p>
+<p class="solid">A solid outline</p>
+<p class="double">A double outline</p>
+<p class="groove">A groove outline. The effect depends on the outline-color value.</p>
+<p class="ridge">A ridge outline. The effect depends on the outline-color value.</p>
+<p class="inset">An inset outline. The effect depends on the outline-color value.</p>
+<p class="outset">An outset outline. The effect depends on the outline-color value.</p>
+
+</body>
+</html>

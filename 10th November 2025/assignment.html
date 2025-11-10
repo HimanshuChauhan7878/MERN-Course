@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #c2e0c2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: grid;
+      grid-template-rows: 1fr 4fr;
+      grid-template-columns: 2fr 1fr;
+      gap: 5px;
+      width: 90%;
+      height: 90%;
+      border: 5px solid #c2e0c2;
+    }
+
+    .top {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+    }
+
+    .top div {
+      background-color: #d98b82;
+    }
+
+    .left {
+      background-color: #727d6d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .left .center-box {
+      background-color: #f0e05c;
+      width: 80px;
+      height: 80px;
+    }
+
+    .right {
+      display: grid;
+      grid-template-rows: repeat(5, 1fr);
+      gap: 5px;
+    }
+
+    .right div {
+      background-color: #879d67;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="left">
+      <div class="center-box"></div>
+    </div>
+    <div class="right">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</body>
+</html>

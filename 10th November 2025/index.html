@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10th November 2025</title>
+    <style>
+div.ex1 {
+  width: 700px;
+  margin: auto;
+  border: 3px solid #73AD21;
+}
+
+div.ex2 {
+  max-width: auto;
+  margin: auto;
+  border: 3px solid #73AD21;
+}
+div.relative {
+  position: relative;
+  left: 30px;
+  border: 3px solid #73AD21;
+}
+div.absolute {
+  position: absolute;
+  left: 30px;
+  border: 3px solid #73AD21;
+}
+div.fixed {
+  position: fixed;
+  left: 30px;
+  border: 3px solid #73AD21;
+}
+div.sticky {
+  position: sticky;
+  left: 30px;
+  border: 3px solid #73AD21;
+}
+img{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    z-index: -1;
+}
+div.new {
+  background-color: coral;
+  width: 200px;
+  height: 65px;
+  border: 1px solid;
+  overflow: auto;
+}
+</style>
+</head>
+<body>
+    <h2>CSS Max-width</h2>
+
+<div class="ex1">This div element has width: 500px;</div>
+<br>
+
+<div class="ex2">This div element has max-width: 500px;</div>
+
+<p><strong>Tip:</strong> Drag the browser window to smaller than 500px wide, to see the difference between 
+the two divs!</p>
+
+<h2>Using positions</h2>
+
+<p>An element with position: relative; is positioned relative to its normal position:</p>
+
+<div class="relative">
+This div element has position: relative;
+</div>
+<br>
+<div class="absolute">
+This div element has position: absolute;
+</div>
+<br>
+<br>
+<div class="fixed">
+This div element has position: fixed;
+</div>
+<br>
+<br>
+<div class="sticky">
+This div element has position: sticky;
+</div>
+<img src="image.pngs" alt="Image" height="100" width="100">
+
+<p>Because the image has a z-index of -1, it will be placed behind the text.</p>
+<h2>Overflow: visible</h2>
+
+<p>By default, the overflow is visible, meaning that it is not clipped and it renders outside the element's box:</p>
+
+<div class = "new">
+You can use the overflow property when you want to have better control of the layout. The overflow property specifies what happens if content overflows an element's box.</div>
+
+</body>
+</html>

@@ -1,235 +1,116 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Himanshu's Project - Complete Combined Layout</title>
-    <style>
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #f8f8f8;
-      }
-      .navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: #3498db;
-        color: #fff;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 24px;
-        box-sizing: border-box;
-        z-index: 100;
-      }
-      .navbar-title {
-        font-size: 22px;
-        font-weight: bold;
-        letter-spacing: 1px;
-      }
-      .navbar-links {
-        display: flex;
-        align-items: center;
-      }
-      .navbar-links a {
-        color: #fff;
-        text-decoration: none;
-        margin-left: 20px;
-        font-size: 18px;
-        font-weight: 500;
-      }
-      .container {
-        max-width: 1100px;
-        margin: 80px auto 0 auto;
-        padding: 18px;
-      }
-      .flex-sections {
-        display: flex;
-        gap: 20px;
-        margin-bottom: 30px;
-      }
-      .section {
-        background: #fff;
-        flex: 1;
-        border-radius: 8px;
-        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
-        padding: 22px 12px 16px 12px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-width: 0;
-      }
-      .section-icon {
-        font-size: 45px;
-        margin-bottom: 14px;
-        margin-top: 4px;
-      }
-      .section-header {
-        font-size: 21px;
-        font-weight: 600;
-        margin-bottom: 10px;
-        text-align: center;
-        color: #3498db;
-        letter-spacing: 0.5px;
-      }
-      .section-content {
-        font-size: 15px;
-        color: #444;
-        text-align: center;
-      }
-      .img-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 16px;
-        height: 380px;
-      }
-      .img-grid img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 7px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
-        background: #eee;
-      }
-      .img-grid .img5 {
-        grid-column: 3;
-        grid-row: 1 / span 2;
-        height: 100%;
-      }
-      @media (max-width: 900px) {
-        .container {
-          padding: 6px;
-        }
-        .flex-sections {
-          flex-direction: column;
-        }
-        .img-grid {
-          grid-template-columns: 1fr;
-          grid-template-rows: repeat(5, 120px);
-          height: auto;
-        }
-        .img-grid .img5 {
-          grid-column: 1;
-          grid-row: 5;
-        }
-      }
-      @media (max-width: 600px) {
-        .navbar {
-          padding: 0 7px;
-          height: 50px;
-        }
-        .navbar-title {
-          font-size: 17px;
-        }
-        .navbar-links a {
-          font-size: 13px;
-        }
-        .container {
-          padding: 2px;
-        }
-        .section {
-          padding: 12px 6px;
-        }
-        .section-header {
-          font-size: 15px;
-        }
-        .img-grid {
-          gap: 6px;
-        }
-        .img-grid img {
-          height: 95px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="navbar">
-      <span class="navbar-title">Himanshu's Project</span>
-      <div class="navbar-links">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+<head>
+  <title>Himanshu's Project</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+    }
+    .navbar {
+      background: #3498db;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    .navbar-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .navbar-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 10px;
+    }
+    .flex-sections {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .section {
+      background: white;
+      flex: 1;
+      border-radius: 6px;
+      padding: 15px;
+      text-align: center;
+    }
+    .section-header {
+      color: #3498db;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .section-content {
+      font-size: 14px;
+      color: #444;
+    }
+    .img-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 180px);
+      gap: 10px;
+    }
+    .img-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .img5 {
+      grid-column: 3;
+      grid-row: 1 / span 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-title">Himanshu's Project</div>
+    <div class="navbar-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="flex-sections">
+      <div class="section">
+        <div class="section-header">Idea Lab</div>
+        <div class="section-content">Work on new ideas and explore creativity.</div>
+      </div>
+      <div class="section">
+        <div class="section-header">Design Studio</div>
+        <div class="section-content">Create designs that look clean and simple.</div>
+      </div>
+      <div class="section">
+        <div class="section-header">Launchpad</div>
+        <div class="section-content">Turn your projects into real-world solutions.</div>
+      </div>
+      <div class="section">
+        <div class="section-header">Toolbox</div>
+        <div class="section-content">Use helpful tools to build faster and better.</div>
       </div>
     </div>
-    <div class="container">
-      <div class="flex-sections">
-        <div class="section">
-          <div class="section-icon">💡</div>
-          <div class="section-header">Idea Lab</div>
-          <div class="section-content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </div>
-        </div>
-        <div class="section">
-          <div class="section-icon">🎨</div>
-          <div class="section-header">Design Studio</div>
-          <div class="section-content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit.
-          </div>
-        </div>
-        <div class="section">
-          <div class="section-icon">🚀</div>
-          <div class="section-header">Launchpad</div>
-          <div class="section-content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit.
-          </div>
-        </div>
-        <div class="section">
-          <div class="section-icon">🔧</div>
-          <div class="section-header">Toolbox</div>
-          <div class="section-content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit.
-          </div>
-        </div>
-      </div>
-      <div class="img-grid">
-        <img
-          src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
-          alt="img1"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
-          alt="img2"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=800&q=80"
-          alt="img3"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
-          alt="img4"
-        />
-        <img
-          class="img5"
-          src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80"
-          alt="img5"
-        />
-      </div>
+
+    <div class="img-grid">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=800&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="">
+      <img class="img5" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="">
     </div>
-  </body>
+  </div>
+</body>
 </html>

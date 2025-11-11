@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Grid Examples</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px;
+            grid-template-areas: "header header header"
+                                 "sidebar main main";
+            gap: 15px;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            place-content: center;
+        }
+        .header {
+            grid-area: header;
+            background: #b4e7f8;
+        }
+        .sidebar {
+            grid-area: sidebar;
+            background: #f8c8b4;
+        }
+        .main {
+            grid-area: main;
+            background: #c8f8b4;
+        }
+        .box1 {background: #e6e6fa;}
+        .box2 {background: #ffe4e1;}
+        .example-row-gap {
+            display: grid;
+            grid-template-columns: 60px 60px;
+            row-gap: 30px;
+            margin-top: 25px;
+        }
+        .example-column-gap {
+            display: grid;
+            grid-template-columns: 60px 60px;
+            column-gap: 30px;
+            margin-top: 25px;
+        }
+        .example-grid-auto-flow {
+            display: grid;
+            grid-template-columns: 80px 80px;
+            grid-auto-flow: column;
+            margin-top: 25px;
+        }
+        .justify-example {
+            display: grid;
+            grid-template-columns: 80px 80px;
+            justify-content: end;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS Grid Examples</h2>
+    
+    <div class="container">
+        <div class="header">Header <br>(grid-template-areas)</div>
+        <div class="sidebar">Sidebar <br>(grid-template-areas)</div>
+        <div class="main">Main <br>(grid-template-areas)</div>
+        <div class="box1">Box 1</div>
+        <div class="box2">Box 2</div>
+    </div>
+    
+    <h3>1. grid-auto-columns</h3>
+    <div style="display: grid; grid-auto-columns: 60px; grid-template-rows: 50px;">
+        <div style="background: #caf">A</div>
+        <div style="background: #fac">B</div>
+    </div>
+
+    <h3>2. grid-auto-rows</h3>
+    <div style="display: grid; grid-template-columns: 80px; grid-auto-rows: 40px;">
+        <div style="background: #ffc">Item One</div>
+        <div style="background: #cfc">Item Two</div>
+    </div>
+
+    <h3>3. grid-auto-flow</h3>
+    <div class="example-grid-auto-flow">
+        <div style="background: #cff">First</div>
+        <div style="background: #cfc">Second</div>
+        <div style="background: #fcf">Third</div>
+    </div>
+
+    <h3>4. gap</h3>
+    <div style="display: grid; grid-template-columns: 60px 60px; gap: 20px;">
+        <div style="background: #def">X</div>
+        <div style="background: #efd">Y</div>
+    </div>
+
+    <h3>5. row-gap</h3>
+    <div class="example-row-gap">
+        <div style="background: #ade">Row 1</div>
+        <div style="background: #dea">Row 2</div>
+    </div>
+
+    <h3>6. column-gap</h3>
+    <div class="example-column-gap">
+        <div style="background: #aed">Col 1</div>
+        <div style="background: #eda">Col 2</div>
+    </div>
+
+    <h3>7. grid-template</h3>
+    <div style="display: grid; grid-template: 40px 40px / 80px 80px;">
+        <div style="background: #dfe">A</div>
+        <div style="background: #fed">B</div>
+        <div style="background: #efd">C</div>
+        <div style="background: #def">D</div>
+    </div>
+
+    <h3>8. place-content</h3>
+    <div style="display: grid; grid-template-columns: 60px 60px; height: 120px; place-content: end;">
+        <div style="background: #cf8">End 1</div>
+        <div style="background: #f8c">End 2</div>
+    </div>
+
+    <h3>9. align-content</h3>
+    <div style="display: grid; grid-template-columns: 60px 60px; height: 120px; align-content: end;">
+        <div style="background: #8cf">Aligned 1</div>
+        <div style="background: #fc8">Aligned 2</div>
+    </div>
+
+    <h3>10. justify-content</h3>
+    <div class="justify-example">
+        <div style="background: #fdc">Right</div>
+        <div style="background: #cdf">Side</div>
+    </div>
+
+    <h3>11. align-items</h3>
+    <div style="display: grid; grid-template-columns: 60px 60px; align-items: end; height: 90px;">
+        <div style="background: #abf">Bottom 1</div>
+        <div style="background: #baf">Bottom 2</div>
+    </div>
+
+    <h3>12. grid-template-columns</h3>
+    <div style="display: grid; grid-template-columns: 30px 90px;">
+        <div style="background: #fea">Small</div>
+        <div style="background: #eaf">Big</div>
+    </div>
+
+    <h3>13. grid-template-rows</h3>
+    <div style="display: grid; grid-template-rows: 30px 90px;">
+        <div style="background: #aef">Short</div>
+        <div style="background: #fea">Tall</div>
+    </div>
+
+    <h3>14. display</h3>
+    <div style="display: grid; grid-template-columns: 60px 60px;">
+        <div style="background: #faf">I am in Grid</div>
+        <div style="background: #afa">Me too!</div>
+    </div>
+</body>
+</html>

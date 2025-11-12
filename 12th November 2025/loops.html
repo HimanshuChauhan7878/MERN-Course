@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Operations, Decision Making & Conditions (Inline JS)</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; }
+    input { width: 80px; margin-right: 10px; }
+    .box { background:#f4f4f4; padding:12px; border-radius:8px; margin-top:12px; }
+    .result { font-weight:600; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <h2>Operations + Decisions (inline JavaScript)</h2>
+
+  <label>Number 1: <input id="n1" type="number" value="25"></label>
+  <label>Number 2: <input id="n2" type="number" value="4"></label>
+  <button onclick="runExample()">Calculate</button>
+
+  <div id="output" class="box" aria-live="polite">
+    <div>Click <strong>Calculate</strong> to see results.</div>
+  </div>
+
+  <script>
+    function runExample() {
+      const a = Number(document.getElementById('n1').value);
+      const b = Number(document.getElementById('n2').value);
+
+      const sum = a + b;                    // addition
+      const diff = a - b;                   // subtraction
+      const prod = a * b;                   // multiplication
+      const div = b !== 0 ? (a / b) : '∞';  // division with check
+      const rem = b !== 0 ? (a % b) : 'N/A';// remainder (modulus)
+
+      let sizeMessage;
+      if (sum >= 100) {
+        sizeMessage = 'Sum is large (>= 100).';
+      } else if (sum >= 50) {
+        sizeMessage = 'Sum is moderate (50–99).';
+      } else {
+        sizeMessage = 'Sum is small (< 50).';
+      }
+
+      const bothEven = (a % 2 === 0) && (b % 2 === 0);
+      const eitherNegative = (a < 0) || (b < 0);
+
+      let parityMsg = bothEven ? 'Both numbers are even.' :
+                      ( (a % 2 === 0 || b % 2 === 0) ? 'At least one number is even.' :
+                        'Both numbers are odd.' );
+
+      let mod3 = sum % 3;
+      let modMsg;
+      switch (mod3) {
+        case 0: modMsg = 'Sum % 3 == 0 → divisible by 3.'; break;
+        case 1: modMsg = 'Sum % 3 == 1 → remainder 1.'; break;
+        case 2: modMsg = 'Sum % 3 == 2 → remainder 2.'; break;
+        default: modMsg = 'Unexpected.'; // should not happen for numbers
+      }
+
+
+      const out = `
+        <div><strong>Inputs:</strong> a = ${a}, b = ${b}</div>
+        <div class="result">Operations:
+          <div>Sum = ${sum}</div>
+          <div>Difference (a - b) = ${diff}</div>
+          <div>Product = ${prod}</div>
+          <div>Division (a / b) = ${div}</div>
+          <div>Remainder (a % b) = ${rem}</div>
+        </div>
+        <div class="result">Decisions & Conditions:
+          <div>${sizeMessage}</div>
+          <div>${parityMsg}</div>
+          <div>${eitherNegative ? 'At least one number is negative.' : 'No negatives.'}</div>
+          <div>Sign of sum: ${sign}</div>
+          <div>${modMsg}</div>
+        </div>
+        <div style="margin-top:8px; font-size:90%;">(Example uses: arithmetic operators + - * / %, comparisons &gt;= &lt;, logical && ||, if/else, ternary, switch.)</div>
+      `;
+
+      document.getElementById('output').innerHTML = out;
+    }
+  </script>
+</body>
+</html>

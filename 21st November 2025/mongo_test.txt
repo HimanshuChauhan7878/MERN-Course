@@ -1,0 +1,43 @@
+1. 
+db.products.find({
+  price: { $gt: 100, $lte: 500 }
+});
+
+2. 
+db.products.find({
+  $or: [
+    { category: "Apparel" },
+    { stock: { $lt: 5 } }
+  ]
+});
+
+3. 
+db.products.find({
+  "details.color": { $exists: false }
+});
+
+4.
+db.products.find({
+  tags: { $all: ["New", "Premium"] }
+});
+
+5.
+db.products.find({
+  reviews: {
+    $elemMatch: {
+      rating: { $lt: 3 },
+      date: { $lt: ISODate("2025-10-01T00:00:00Z") }
+    }
+  }
+});
+
+6.
+db.products.find(
+  { price: { $lt: 100 } }
+).sort(
+  { name: -1 }
+);
+
+7.
+db.products.find().sort({ price: 1 }).limit(3);
+

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auth System</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 350px;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .toggle {
+      text-align: center;
+      margin-top: 10px;
+      cursor: pointer;
+      color: blue;
+    }
+
+    .msg {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <h2 id="title">Register</h2>
+
+    <div id="registerForm">
+      <input type="text" id="regName" placeholder="Name" />
+      <input type="email" id="regEmail" placeholder="Email" />
+      <input type="password" id="regPassword" placeholder="Password" />
+      <button onclick="register()">Register</button>
+    </div>
+
+    <div id="loginForm" style="display:none;">
+      <input type="email" id="loginEmail" placeholder="Email" />
+      <input type="password" id="loginPassword" placeholder="Password" />
+      <button onclick="login()">Login</button>
+    </div>
+
+    <div class="toggle" onclick="toggleForms()">Switch to Login</div>
+
+    <div id="message" class="msg"></div>
+
+  </div>
+
+
+  <script>
+    const API_URL = "http://localhost:5000/api/auth";
+
+    function toggleForms() {
+      const reg = document.getElementById("registerForm");
+      const log = document.getElementById("loginForm");
+      const title = document.getElementById("title");
+
+      if (reg.style.display === "none") {
+        reg.style.display = "block";
+        log.style.display = "none";
+        title.innerText = "Register";
+      } else {
+        reg.style.display = "none";
+        log.style.display = "block";
+        title.innerText = "Login";
+      }
+    }
+
+    async function register() {
+      const name = document.getElementById("regName").value;
+      const email = document.getElementById("regEmail").value;
+      const password = document.getElementById("regPassword").value;
+
+      const res = await fetch(`${API_URL}/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password })
+      });
+
+      const data = await res.json();
+      document.getElementById("message").innerText = data.msg || "Error";
+    }
+
+    async function login() {
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+
+      const res = await fetch(`${API_URL}/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await res.json();
+
+      if (data.token) {
+        document.getElementById("message").innerText = "Login successful!";
+        localStorage.setItem("token", data.token);
+      } else {
+        document.getElementById("message").innerText = data.msg || "Error";
+      }
+    }
+  </script>
+
+</body>
+</html>
